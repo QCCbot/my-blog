@@ -2,7 +2,7 @@
 title: 'QCCBot Cloud Phone: Complete Feature Overview'
 description: 'A comprehensive guide to QCCBot cloud phone platform features including batch management, proxy IP, and automation scripts.'
 pubDate: 'Apr 08 2026'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/qccbot-features.png'
 ---
 
 QCCBot is a powerful cloud phone management platform built specifically for overseas and cross-border business operations. Whether you're managing social media accounts, running automation workflows, or scaling your overseas operations, QCCBot provides everything you need in one platform.

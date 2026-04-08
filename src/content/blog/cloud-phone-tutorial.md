@@ -2,7 +2,7 @@
 title: 'Getting Started with Cloud Phones: A Complete Tutorial'
 description: 'Learn how to set up and use cloud phones for overseas operations, social media management, and cross-border e-commerce.'
 pubDate: 'Apr 08 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/cloud-phone-tutorial.png'
 ---
 
 Cloud phones are virtual Android devices that run entirely in the cloud. This tutorial will walk you through everything you need to know to get started with cloud phones for your overseas operations.
