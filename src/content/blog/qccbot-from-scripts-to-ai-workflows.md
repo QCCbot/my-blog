@@ -2,7 +2,7 @@
 title: 'From Scripts to AI Workflows: The Future of Cloud Phone Operations'
 description: 'A practical look at how QCCBot combines script templates, AI generation, task monitoring, and cloud phone groups into an operating system for mobile workflows.'
 pubDate: 'Jun 02 2026'
-heroImage: '../../assets/qccbot-cover.png'
+heroImage: '../../assets/qccbot-scripts-to-ai-workflows-cover.png'
 ---
 
 Scripts are the first step toward automation. AI workflows are the next step.

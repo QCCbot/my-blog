@@ -2,7 +2,7 @@
 title: 'AI Cloud Phone Operations for Cross-Border E-Commerce Teams'
 description: 'How cross-border sellers can use QCCBot cloud phones, AI scripts, and isolated mobile environments to manage app-based commerce workflows.'
 pubDate: 'Jun 02 2026'
-heroImage: '../../assets/cloud-phone-tutorial.png'
+heroImage: '../../assets/qccbot-cross-border-ecommerce-ai-operations-cover.png'
 ---
 
 Cross-border e-commerce teams live inside mobile apps. Marketplace apps, social apps, messaging apps, creator tools, and analytics tools all become part of daily work.

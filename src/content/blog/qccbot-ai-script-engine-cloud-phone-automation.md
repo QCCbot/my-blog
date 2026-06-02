@@ -2,7 +2,7 @@
 title: 'QCCBot AI Script Engine: From Manual Steps to Cloud Phone Automation'
 description: 'Learn how QCCBot uses AI-assisted script generation to help teams turn mobile operating goals into repeatable cloud phone workflows.'
 pubDate: 'Jun 02 2026'
-heroImage: '../../assets/qccbot-cover.png'
+heroImage: '../../assets/qccbot-ai-script-engine-cover.png'
 ---
 
 Most mobile operations start the same way: someone opens an app, repeats a set of steps, checks the result, and documents the pattern for the next person.

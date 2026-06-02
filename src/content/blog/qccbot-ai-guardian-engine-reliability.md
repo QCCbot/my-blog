@@ -2,7 +2,7 @@
 title: 'AI Guardian Engine: Keeping Cloud Phone Automation Reliable at Scale'
 description: 'See how QCCBot AI Guardian Engine helps teams detect stuck tasks, recover from app changes, and keep batch cloud phone automation observable.'
 pubDate: 'Jun 02 2026'
-heroImage: '../../assets/qccbot-features.png'
+heroImage: '../../assets/qccbot-ai-guardian-engine-cover.png'
 ---
 
 Running one automation task is easy to watch. Running the same task across many cloud phones is a different problem.

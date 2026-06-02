@@ -2,7 +2,7 @@
 title: 'Why Account Matrices Need Isolated Cloud Phones'
 description: 'Learn why teams managing many app accounts use QCCBot cloud phones to separate devices, projects, regions, and operational workflows.'
 pubDate: 'Jun 02 2026'
-heroImage: '../../assets/qccbot-features.png'
+heroImage: '../../assets/qccbot-isolated-cloud-phones-account-matrices-cover.png'
 ---
 
 An account matrix is useful only if it stays organized.

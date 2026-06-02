@@ -2,7 +2,7 @@
 title: 'Inside QCCBot Script Library for Social Media Automation'
 description: 'Explore how QCCBot organizes TikTok, YouTube, Xiaohongshu, Weibo, and LinkedIn scripts into reusable workflows for cloud phone teams.'
 pubDate: 'Jun 02 2026'
-heroImage: '../../assets/qccbot-cover.png'
+heroImage: '../../assets/qccbot-social-media-script-library-cover.png'
 ---
 
 Every social app has its own interaction model. Search behaves differently on YouTube than on TikTok. Profile editing works differently on Weibo than on LinkedIn. Xiaohongshu has its own publishing and browsing patterns.
