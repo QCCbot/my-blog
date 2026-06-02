@@ -3,37 +3,253 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import QccbotCover from '../assets/qccbot-cover.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 1080px;
+			}
+			.hero {
+				display: grid;
+				grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+				gap: 2.5rem;
+				align-items: center;
+				padding: 1.5rem 0 2.5rem;
+			}
+			.eyebrow {
+				margin: 0 0 0.75rem;
+				color: var(--accent);
+				font-size: 0.9rem;
+				font-weight: 700;
+				letter-spacing: 0;
+				text-transform: uppercase;
+			}
+			.hero h1 {
+				margin-bottom: 1rem;
+				font-size: 3.1rem;
+			}
+			.hero-copy {
+				font-size: 1.15rem;
+				color: rgb(var(--gray-dark));
+			}
+			.hero-actions {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.8rem;
+				margin-top: 1.5rem;
+			}
+			.button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 2.75rem;
+				padding: 0 1rem;
+				border: 1px solid var(--accent);
+				border-radius: 6px;
+				text-decoration: none;
+				font-weight: 700;
+			}
+			.button.primary {
+				background: var(--accent);
+				color: white;
+			}
+			.button.secondary {
+				background: white;
+				color: var(--accent);
+			}
+			.hero-media img {
+				width: 100%;
+				box-shadow: var(--box-shadow);
+			}
+			.metric-row,
+			.capability-grid,
+			.workflow-grid,
+			.article-grid {
+				display: grid;
+				gap: 1rem;
+			}
+			.metric-row {
+				grid-template-columns: repeat(4, 1fr);
+				margin: 0 0 2.5rem;
+			}
+			.metric,
+			.capability,
+			.workflow,
+			.article-link {
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 8px;
+				background: white;
+				padding: 1rem;
+			}
+			.metric strong {
+				display: block;
+				color: rgb(var(--black));
+				font-size: 1.2rem;
+			}
+			.metric span {
+				display: block;
+				color: rgb(var(--gray));
+				font-size: 0.9rem;
+				line-height: 1.45;
+			}
+			.capability-grid {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			.workflow-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.article-grid {
+				grid-template-columns: repeat(3, 1fr);
+				margin-top: 1rem;
+			}
+			.capability h3,
+			.workflow h3,
+			.article-link h3 {
+				font-size: 1.1rem;
+			}
+			.capability p,
+			.workflow p,
+			.article-link p {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 0.96rem;
+				line-height: 1.55;
+			}
+			.article-link {
+				color: inherit;
+				text-decoration: none;
+			}
+			.article-link:hover h3 {
+				color: var(--accent);
+			}
+			section {
+				margin-top: 2.5rem;
+			}
+			@media (max-width: 860px) {
+				.hero,
+				.metric-row,
+				.capability-grid,
+				.workflow-grid,
+				.article-grid {
+					grid-template-columns: 1fr;
+				}
+				.hero h1 {
+					font-size: 2.2rem;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-		<h1>🚀 Welcome to QCCBot Cloud Phone</h1>
-<p>
-  The next generation cloud phone platform built for overseas and cross-border operations.
-  Manage hundreds of cloud phones at scale — with proxy IP, automation scripts, and remote control.
-</p>
+			<section class="hero">
+				<div>
+					<p class="eyebrow">AI-powered cloud phone operations</p>
+					<h1>QCCBot turns cloud phones into an AI automation workforce.</h1>
+					<p class="hero-copy">
+						QCCBot brings isolated Android cloud phones, an AI Script Engine, an AI Guardian
+						Engine, and a multi-platform script store into one operating console for teams
+						managing mobile workflows at scale.
+					</p>
+					<div class="hero-actions">
+						<a class="button primary" href="https://www.qccbot.com/">Visit QCCBot</a>
+						<a class="button secondary" href="/blog/">Read the blog</a>
+					</div>
+				</div>
+				<div class="hero-media">
+					<img src={QccbotCover.src} alt="QCCBot cloud phone management platform" />
+				</div>
+			</section>
 
-<h2>🛠 Our Products</h2>
-<p>
-  <strong>QCCBot</strong> — Cloud phone creation, batch management, proxy IP configuration, automation scripts, and remote control. Our core product for overseas operators.
-</p>
-<p>
-  <strong>BashClaw</strong> — A CLI tool built on QCCBot. One-click deployment to cloud servers, batch operations, and remote cloud phone control for power users.
-</p>
-<p>
-  <strong>Ainnc</strong> — A cross-border marketing tool built on QCCBot. Batch social media account management including TikTok, bulk video publishing, designed for overseas e-commerce.
-</p>
+			<div class="metric-row" aria-label="QCCBot platform highlights">
+				<div class="metric">
+					<strong>AI scripts</strong>
+					<span>Generate, refine, and adapt AutoJS-style automation from natural goals.</span>
+				</div>
+				<div class="metric">
+					<strong>AI recovery</strong>
+					<span>Detect failed tasks, diagnose UI drift, and guide scripts back on track.</span>
+				</div>
+				<div class="metric">
+					<strong>Cloud phones</strong>
+					<span>Run separate Android environments for apps, accounts, and projects.</span>
+				</div>
+				<div class="metric">
+					<strong>Script library</strong>
+					<span>Operate TikTok, YouTube, Xiaohongshu, Weibo, LinkedIn, and more.</span>
+				</div>
+			</div>
 
-<h2>📖 Latest from the Blog</h2>
-<p>
-  Check out our <a href="/blog">blog</a> for product updates, tutorials, and industry insights on cloud phone technology and overseas operations.
-</p>
+			<section>
+				<h2>AI capabilities built for mobile work</h2>
+				<div class="capability-grid">
+					<div class="capability">
+						<h3>AI Script Engine</h3>
+						<p>
+							Translate operating intent into executable scripts, reuse proven templates, and
+							adjust flows when app screens, labels, or steps change.
+						</p>
+					</div>
+					<div class="capability">
+						<h3>AI Guardian Engine</h3>
+						<p>
+							Monitor task status, surface stuck states, and help recover from errors that
+							would otherwise require manual checking across many devices.
+						</p>
+					</div>
+					<div class="capability">
+						<h3>Cloud phone context</h3>
+						<p>
+							Pair AI decisions with device groups, proxy configuration, app state, logs, and
+							remote control so automation stays observable.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>From script store to repeatable operations</h2>
+				<div class="workflow-grid">
+					<div class="workflow">
+						<h3>Multi-platform task templates</h3>
+						<p>
+							QCCBot's script store includes workflows for TikTok, YouTube, Xiaohongshu, Weibo,
+							LinkedIn, and utility operations such as cache clearing, search, posting, and
+							status updates.
+						</p>
+					</div>
+					<div class="workflow">
+						<h3>Batch device orchestration</h3>
+						<p>
+							Group cloud phones by campaign, region, client, or account type, then run,
+							observe, and tune tasks across isolated Android instances from one dashboard.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Latest AI automation guides</h2>
+				<div class="article-grid">
+					<a class="article-link" href="/blog/qccbot-ai-script-engine-cloud-phone-automation/">
+						<h3>AI Script Engine</h3>
+						<p>How QCCBot helps teams move from manual scripts to AI-assisted workflows.</p>
+					</a>
+					<a class="article-link" href="/blog/qccbot-ai-guardian-engine-reliability/">
+						<h3>AI Guardian Engine</h3>
+						<p>Why task recovery matters when cloud phone automation runs at scale.</p>
+					</a>
+					<a class="article-link" href="/blog/qccbot-social-media-script-library/">
+						<h3>Script library</h3>
+						<p>How reusable templates turn social app workflows into repeatable operations.</p>
+					</a>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>

@@ -2,4 +2,5 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'QCCBot Cloud Phone';
-export const SITE_DESCRIPTION = 'The Next Generation Cloud Phone Solution';
+export const SITE_DESCRIPTION =
+	'QCCBot combines cloud phones, AI script generation, AI task recovery, and batch automation for mobile-first operations teams.';
