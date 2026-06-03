@@ -66,3 +66,5 @@ This is where AI has real value: it helps teams iterate faster while keeping exe
 ## Final thought
 
 The AI Script Engine turns QCCBot from a remote Android platform into a programmable mobile operations layer. For teams that depend on repeatable app workflows, that difference matters.
+
+Learn more on the [QCCBot official website](https://www.qccbot.com/).

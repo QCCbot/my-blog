@@ -82,3 +82,5 @@ Together, they cover the full Device → Execution → Content pipeline for over
 BashClaw is currently active and available inside the QCCBot platform. If you're already a QCCBot user, you're one click away from command-line control over your entire cloud phone fleet.
 
 > Built for developers who don't want to compromise between power and simplicity.
+
+Learn more on the [QCCBot official website](https://www.qccbot.com/).

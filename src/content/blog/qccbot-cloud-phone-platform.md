@@ -70,4 +70,4 @@ All scripts support one-click Run or Copy, and are continuously expanded based o
 
 ## Get Started
 
-QCCBot combines device isolation, proxy management, and a full script ecosystem into one platform — everything a bulk operator needs to scale. Visit [qccbot.com](https://qccbot.com) to get started.
+QCCBot combines device isolation, proxy management, and a full script ecosystem into one platform — everything a bulk operator needs to scale. Visit the [QCCBot official website](https://www.qccbot.com/) to get started.

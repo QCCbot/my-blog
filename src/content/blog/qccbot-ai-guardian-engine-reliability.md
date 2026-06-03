@@ -74,3 +74,5 @@ AI does not replace control. It improves control by making problems easier to fi
 ## Final thought
 
 The AI Guardian Engine makes QCCBot automation more resilient. When mobile apps change and tasks get stuck, teams need more than a script runner. They need a system that can observe, explain, and help recover.
+
+Learn more on the [QCCBot official website](https://www.qccbot.com/).

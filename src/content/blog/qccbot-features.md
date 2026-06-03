@@ -60,4 +60,4 @@ QCCBot is designed for:
 
 ## Get Started
 
-Visit [qccbot.com](https://qccbot.com) to learn more and start your free trial today.
+Visit the [QCCBot official website](https://www.qccbot.com/) to learn more and start your free trial today.

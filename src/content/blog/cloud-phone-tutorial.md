@@ -78,4 +78,4 @@ When managing multiple cloud phones:
 
 Now that you have your cloud phones set up, explore QCCBot's advanced features like script automation, batch posting, and multi-account management to scale your overseas operations.
 
-Visit [qccbot.com](https://qccbot.com) to get started today.
+Visit the [QCCBot official website](https://www.qccbot.com/) to get started today.
