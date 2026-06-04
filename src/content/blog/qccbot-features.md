@@ -1,63 +1,85 @@
 ---
-title: 'QCCBot Cloud Phone: Complete Feature Overview'
-description: 'A comprehensive guide to QCCBot cloud phone platform features including batch management, proxy IP, and automation scripts.'
+title: 'QCCBot Features Explained in Plain English'
+description: 'A beginner-friendly overview of QCCBot cloud phone features and how they help real mobile operations teams.'
 pubDate: 'Apr 08 2026'
 heroImage: '../../assets/qccbot-features.png'
 ---
 
-QCCBot is a powerful cloud phone management platform built specifically for overseas and cross-border business operations. Whether you're managing social media accounts, running automation workflows, or scaling your overseas operations, QCCBot provides everything you need in one platform.
+QCCBot has many features, but the main idea is simple: help teams manage many Android phones online and reduce repeated manual work.
 
-## What is QCCBot?
+This guide explains the key features in plain English.
 
-QCCBot is a cloud phone platform that lets you create and manage virtual Android phones entirely in the cloud. Unlike physical phones, cloud phones run on remote servers, giving you the ability to scale instantly, automate tasks, and operate from anywhere in the world.
+## 1. Cloud phones
 
-## Core Features
+A cloud phone is an Android phone that runs online. You control it from your computer instead of holding a physical device.
 
-### 1. Cloud Phone Creation & Batch Management
+This helps when you need more than a few phones, or when team members need to access phones remotely.
 
-Create hundreds of cloud phones with just a few clicks. QCCBot's batch management system lets you:
+## 2. Device groups
 
-- Create multiple cloud phones simultaneously
-- Manage all devices from a single dashboard
-- Group phones by project or campaign
-- Monitor device status in real time
+When you have many phones, grouping is important.
 
-### 2. Proxy IP Configuration
+You can organize cloud phones by:
 
-Each cloud phone can be assigned its own proxy IP address, allowing you to:
+- Client.
+- Country.
+- App.
+- Account type.
+- Campaign.
+- Testing or production.
 
-- Simulate different geographic locations
-- Maintain separate identities for each account
-- Avoid platform detection and bans
-- Support HTTP, SOCKS5, and residential proxies
+This makes it easier to know what each phone is for.
 
-### 3. Automation Scripts
+## 3. Remote control
 
-QCCBot's automation engine lets you run custom scripts across your cloud phones:
+You can open a cloud phone and operate it like a normal Android device. This is useful when you need to log in, check a screen, upload files, or review a task manually.
 
-- Schedule tasks to run automatically
-- Execute batch operations across all devices
-- Automate repetitive social media actions
-- Build custom workflows for your specific needs
+The point is not to remove human control. The point is to make control easier from one place.
 
-### 4. Remote Control
+## 4. Script templates
 
-Access and control any cloud phone from your browser or desktop:
+Many app tasks are repeated. Script templates help you start faster.
 
-- Full remote desktop access
-- Real-time screen viewing
-- Touch and keyboard input simulation
-- File upload and download support
+Examples include:
 
-## Who is QCCBot For?
+- Open an app.
+- Search a keyword.
+- Browse content.
+- Upload media.
+- Check comments.
+- Clear cache.
+- Run basic account checks.
 
-QCCBot is designed for:
+You can test a script, adjust it, and reuse it across selected cloud phones.
 
-- **Overseas operators** managing multiple social media accounts
-- **Cross-border e-commerce** sellers needing multiple device identities
-- **Marketing teams** running large-scale campaigns
-- **Developers** building automation workflows
+## 5. AI-assisted workflows
 
-## Get Started
+AI helps turn a normal task description into script steps. It can also help when a workflow needs small changes.
 
-Visit the [QCCBot official website](https://www.qccbot.com/) to learn more and start your free trial today.
+For example, instead of building every step from zero, an operator can start with a task goal and a template, then improve it after testing.
+
+## 6. Task status and logs
+
+Logs help answer the important questions:
+
+- Did the task start?
+- Did it finish?
+- Where did it stop?
+- Which phone had a problem?
+- Should the script be changed?
+
+This is one of the most useful features for teams that manage many devices.
+
+## 7. Account separation
+
+Different accounts often need different environments. QCCBot helps teams separate work by using different cloud phones and groups.
+
+This makes daily operations easier to understand and review.
+
+## Final takeaway
+
+QCCBot is not just a remote phone viewer. It is a way to organize cloud phones, run repeated tasks, and see what happened.
+
+If your team is spending too much time checking phones one by one, QCCBot can help make that work more manageable.
+
+Visit the [QCCBot official website](https://www.qccbot.com/) to learn more.

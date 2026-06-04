@@ -1,81 +1,88 @@
 ---
-title: 'Getting Started with Cloud Phones: A Complete Tutorial'
-description: 'Learn how to set up and use cloud phones for overseas operations, social media management, and cross-border e-commerce.'
+title: 'How to Start Using Cloud Phones: A Beginner Tutorial'
+description: 'A simple beginner tutorial for cloud phones, including when to use them, how to organize them, and what to automate first.'
 pubDate: 'Apr 08 2026'
 heroImage: '../../assets/cloud-phone-tutorial.png'
 ---
 
-Cloud phones are virtual Android devices that run entirely in the cloud. This tutorial will walk you through everything you need to know to get started with cloud phones for your overseas operations.
+A cloud phone is an Android phone that runs online. You can open it from your computer, install apps, and use it like a normal phone.
 
-## What is a Cloud Phone?
+The difference is that you do not need to keep the physical phone on your desk.
 
-A cloud phone is a virtual Android device hosted on a remote server. It works just like a real phone, but you access and control it through your browser or desktop app. Cloud phones are ideal for:
+This tutorial explains how a beginner can start.
 
-- Managing multiple social media accounts
-- Running automation scripts 24/7
-- Operating from any location in the world
-- Scaling your operations without buying physical devices
+## Step 1: Know why you need a cloud phone
 
-## Step 1: Create Your First Cloud Phone
+Before creating many devices, be clear about the job.
 
-After logging into QCCBot, follow these steps:
+Common reasons include:
 
-1. Click **Create Cloud Phone** on the dashboard
-2. Choose your preferred Android version
-3. Select the region for your cloud phone
-4. Click **Confirm** to create your device
+- Managing several mobile accounts.
+- Testing app flows.
+- Running repeated app tasks.
+- Separating work by country or client.
+- Letting a remote team access devices.
 
-Your cloud phone will be ready within seconds.
+If you only need one personal phone, cloud phones may not be necessary. They become useful when phone work is repeated or needs scale.
 
-## Step 2: Configure Proxy IP
+## Step 2: Create a small number of phones
 
-To protect your accounts and simulate different locations:
+Start with a few cloud phones, not dozens.
 
-1. Go to your cloud phone settings
-2. Click **Proxy Configuration**
-3. Enter your proxy IP address and port
-4. Select the proxy type (HTTP or SOCKS5)
-5. Click **Save** and restart your cloud phone
+A small starting group helps you learn the platform, test apps, and avoid confusion.
 
-Each cloud phone should have its own unique proxy IP to maintain separate identities.
+For example, create 3 to 5 cloud phones for one project or one app.
 
-## Step 3: Install Apps
+## Step 3: Organize phones into groups
 
-Once your cloud phone is running:
+Give each group a clear purpose.
 
-1. Open the built-in browser on your cloud phone
-2. Download your required apps (TikTok, Instagram, etc.)
-3. Or use the APK installer to sideload apps directly
-4. Log in to your accounts as normal
+Good group names are simple:
 
-## Step 4: Set Up Automation
+- TikTok Test.
+- US Market.
+- Client A.
+- App QA.
+- Daily Upload.
 
-QCCBot's automation feature lets you run tasks automatically:
+Clear names help everyone know what each phone is for.
 
-1. Go to the **Automation** section in your dashboard
-2. Create a new script or choose from templates
-3. Assign the script to one or more cloud phones
-4. Set a schedule or trigger condition
-5. Click **Run** to start automation
+## Step 4: Install the apps you need
 
-## Step 5: Batch Management
+Open each cloud phone and install the apps required for your work.
 
-When managing multiple cloud phones:
+This might include social media apps, e-commerce apps, testing apps, or communication tools.
 
-1. Select multiple devices from your dashboard
-2. Use **Batch Operations** to apply actions to all selected phones
-3. Monitor all devices from the unified dashboard
-4. Group phones by project for easier management
+After installing, check that login and basic app use work normally.
 
-## Tips for Best Results
+## Step 5: Try one simple automation task
 
-- **Use residential proxies** for better account security
-- **Warm up new accounts** gradually before posting
-- **Keep your cloud phones running 24/7** for consistent engagement
-- **Monitor device status** regularly from the dashboard
+Do not automate a long workflow first.
 
-## Next Steps
+Start with something easy to check, such as:
 
-Now that you have your cloud phones set up, explore QCCBot's advanced features like script automation, batch posting, and multi-account management to scale your overseas operations.
+- Open an app.
+- Search a keyword.
+- Browse content.
+- Upload one test file.
+- Check whether login is still valid.
 
-Visit the [QCCBot official website](https://www.qccbot.com/) to get started today.
+Run it on a test phone, then review the result.
+
+## Step 6: Watch logs and improve
+
+If a task fails, look at where it stopped. Was the app slow? Did a popup appear? Did the screen change?
+
+Logs help you improve the task instead of guessing.
+
+## Step 7: Scale slowly
+
+Once the workflow works on a few phones, add more devices. Keep testing as you grow.
+
+A safe rule is: test small, review, then scale.
+
+## Final takeaway
+
+Cloud phones are useful when your team has repeated mobile work. Start with a small group, organize devices clearly, run simple tasks first, and use logs to improve.
+
+Visit the [QCCBot official website](https://www.qccbot.com/) to get started.
