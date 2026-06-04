@@ -60,4 +60,4 @@ Together, they cover the full Device → Execution → Content pipeline for over
 
 If you're running a social media operation at scale and spending too much time on manual tasks, Ainnc is built for you. Reach out to learn more about pricing and onboarding.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

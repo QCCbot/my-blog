@@ -51,4 +51,4 @@ Start with a small cloud phone group. Check the result. Review logs. Fix obvious
 
 QCCBot AI Script Engine is useful because it connects AI assistance with real Android cloud phones. The result is not just a script idea. It is a workflow your team can test, run, and improve.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

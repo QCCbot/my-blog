@@ -69,4 +69,4 @@ The best workflow is simple:
 
 If your team repeats the same mobile steps every day, AI script generation can help you move faster. QCCBot connects script generation with real Android cloud phones, so the workflow can actually run and be reviewed.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

@@ -70,4 +70,4 @@ QCCBot includes cloud phone management, script templates for social apps, AI-ass
 
 The goal is simple: fewer repeated manual checks, more organized mobile operations.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

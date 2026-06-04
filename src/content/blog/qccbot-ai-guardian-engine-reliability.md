@@ -56,4 +56,4 @@ A team can use QCCBot like this:
 
 The value of AI Guardian is not complicated. It helps teams see what is happening, find stuck tasks faster, and keep cloud phone automation more reliable.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

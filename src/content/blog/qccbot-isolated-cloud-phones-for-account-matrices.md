@@ -62,4 +62,4 @@ Teams with many accounts do not only need more devices. They need clearer struct
 
 QCCBot helps by giving teams isolated cloud phones, device groups, scripts, and task logs in one platform.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

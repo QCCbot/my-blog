@@ -83,4 +83,4 @@ BashClaw is currently active and available inside the QCCBot platform. If you're
 
 > Built for developers who don't want to compromise between power and simplicity.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

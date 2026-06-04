@@ -71,4 +71,4 @@ A useful AI cloud phone platform should give you:
 
 QCCBot is built around this idea: cloud phones are the device layer, and AI helps turn repeated mobile work into managed workflows.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

@@ -71,4 +71,4 @@ This is easier than trying to automate everything on the first day.
 
 QCCBot is useful because it turns many scattered phone tasks into organized cloud phone workflows. It helps teams save time, separate accounts, and understand task results more clearly.
 
-Visit the [QCCBot official website](https://www.qccbot.com/) to learn more.
+[Visit the QCCBot official website to learn more about cloud phone workflows.](https://www.qccbot.com/)

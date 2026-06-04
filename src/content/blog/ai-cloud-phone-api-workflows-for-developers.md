@@ -53,4 +53,4 @@ Together, they help teams build practical mobile automation without managing phy
 
 Cloud phone API workflows are useful when developers need repeatable Android tasks with clear state and logs. AI helps speed up script creation and failure review, but the main value is control and visibility.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

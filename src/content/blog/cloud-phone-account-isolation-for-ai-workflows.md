@@ -57,4 +57,4 @@ If your team manages multiple mobile accounts, separate environments make work e
 
 QCCBot lets teams organize cloud phones by group, run scripts, and review task logs with clearer context.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

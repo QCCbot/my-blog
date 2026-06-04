@@ -77,4 +77,4 @@ AI cloud phones can help teams:
 
 QCCBot gives cross-border teams cloud Android devices, groups, scripts, and AI-assisted monitoring in one place.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

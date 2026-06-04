@@ -85,4 +85,4 @@ A safe rule is: test small, review, then scale.
 
 Cloud phones are useful when your team has repeated mobile work. Start with a small group, organize devices clearly, run simple tasks first, and use logs to improve.
 
-Visit the [QCCBot official website](https://www.qccbot.com/) to get started.
+[Visit the QCCBot official website to get started with cloud phones.](https://www.qccbot.com/)

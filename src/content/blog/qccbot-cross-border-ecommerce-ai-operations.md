@@ -59,4 +59,4 @@ For example:
 
 Cross-border operations are hard because there are many small repeated tasks. QCCBot helps sellers organize cloud phones, run scripts, and use AI assistance to reduce manual work.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

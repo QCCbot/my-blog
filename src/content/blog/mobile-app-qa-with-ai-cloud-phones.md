@@ -64,4 +64,4 @@ AI cloud phones do not replace QA people. They help QA teams spend less time rep
 
 QCCBot gives teams cloud Android devices, scripts, logs, and AI-assisted monitoring for repeated mobile app testing.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)

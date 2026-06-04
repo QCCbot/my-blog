@@ -82,4 +82,4 @@ QCCBot is not just a remote phone viewer. It is a way to organize cloud phones, 
 
 If your team is spending too much time checking phones one by one, QCCBot can help make that work more manageable.
 
-Visit the [QCCBot official website](https://www.qccbot.com/) to learn more.
+[Visit the QCCBot official website to learn more about cloud phone workflows.](https://www.qccbot.com/)

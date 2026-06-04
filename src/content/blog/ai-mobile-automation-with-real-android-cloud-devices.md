@@ -61,4 +61,4 @@ AI is helpful, but it needs a real mobile environment to be useful for app work.
 
 QCCBot combines cloud Android devices, scripts, AI assistance, and logs so teams can build practical mobile workflows.
 
-Learn more on the [QCCBot official website](https://www.qccbot.com/).
+[Learn how QCCBot can help your team manage cloud phones and AI automation workflows.](https://www.qccbot.com/)
