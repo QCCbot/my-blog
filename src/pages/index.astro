@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { Image } from 'astro:assets';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import QccbotCover from '../assets/qccbot-cover.png';
 ---
@@ -162,7 +163,13 @@ import QccbotCover from '../assets/qccbot-cover.png';
 					</div>
 				</div>
 				<div class="hero-media">
-					<img src={QccbotCover.src} alt="QCCBot cloud phone management platform" />
+					<Image
+						src={QccbotCover}
+						width={760}
+						height={506}
+						alt="QCCBot cloud phone management platform"
+						loading="eager"
+					/>
 				</div>
 			</section>
 
