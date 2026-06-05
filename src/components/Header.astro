@@ -1,6 +1,8 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+
+const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').toString();
 ---
 
 <header>
@@ -17,6 +19,7 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<div class="social-links">
+			<a class="language-link" href={chineseHref}>中文</a>
 			<a class="icon-link" href="https://www.qccbot.com/" target="_blank">
 				<span class="sr-only">Visit QCCBot website</span>
 				<img src="/qccbot-icon.png" alt="" width="32" height="32" />
@@ -79,8 +82,21 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 	}
+	.language-link {
+		justify-content: center;
+		min-width: 3rem;
+		height: 2rem;
+		margin-right: 0.25rem;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+	.language-link:hover {
+		border-color: var(--accent);
+	}
 	@media (max-width: 720px) {
-		.social-links {
+		.social-links a:not(.language-link) {
 			display: none;
 		}
 	}
