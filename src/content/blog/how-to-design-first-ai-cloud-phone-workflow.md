@@ -157,3 +157,50 @@ Teams can use xeasy code AI to generate and debug AutoJS scripts, run them on An
 The best way to start is not a huge automation project. It is one useful mobile task that works, records what happened, and teaches the team how to improve.
 
 If you want to build your first AI cloud phone workflow, [QCCBot can help you start with a simple Android app task and grow from there](https://www.qccbot.com/).
+
+<!-- qccbot-depth:en -->
+
+## When this workflow is a good fit
+
+This workflow is a good fit for cloud phone automation when the task is frequent, repeatable, and easy to judge after it finishes.
+
+Good signs include:
+
+- the same app flow is checked every day;
+- many accounts need the same action;
+- operators spend time confirming normal states;
+- failures are usually popups, loading issues, login state, or UI changes;
+- the team needs logs for review.
+
+Poor signs include:
+
+- every run needs a different business decision;
+- the flow involves sensitive account choices;
+- success cannot be described clearly;
+- the process changes every day.
+
+Automation should start where the task is stable enough to measure.
+
+## A lightweight maturity model
+
+Teams can grow the workflow in stages:
+
+**Stage 1:** Run the task manually and write down the steps.
+
+**Stage 2:** Turn the stable part into a script.
+
+**Stage 3:** Add logs and failure labels.
+
+**Stage 4:** Test on a small cloud phone group.
+
+**Stage 5:** Add controlled recovery for safe exceptions.
+
+**Stage 6:** Expand to more devices only after the results are easy to review.
+
+This keeps the team from jumping from manual work to an unmanageable fleet overnight.
+
+## What QCCBot adds
+
+QCCBot is designed for the middle ground between manual phone checking and fully custom engineering. Teams can run Android cloud phones, generate and debug AutoJS scripts with AI, watch task status, and use controlled exception takeover where it makes sense.
+
+If this sounds like the kind of mobile work your team deals with, [QCCBot can help you test the workflow on cloud phones and decide what should be automated first](https://www.qccbot.com/).

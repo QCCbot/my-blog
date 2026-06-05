@@ -110,3 +110,41 @@ QCCBot combines cloud phone execution, task logs, AI exception recognition, and 
 When a cloud phone stops on an unexpected screen, QCCBot can help classify the interruption and guide the workflow toward recovery or review.
 
 For teams dealing with repeated app popups and stuck cloud phone tasks, [QCCBot can help turn those interruptions into manageable exception workflows](https://www.qccbot.com/).
+
+<!-- qccbot-depth:en -->
+
+## Questions to ask before choosing a tool
+
+If your team is evaluating tools for mobile app popups and permission prompts, avoid choosing based only on a polished demo.
+
+Ask practical questions:
+
+- Can we group devices by account, market, project, or task?
+- Can we run the same script across a small test group first?
+- Can we see task status without opening every phone?
+- Can failures be grouped by reason?
+- Can AI help debug script errors?
+- Can AI recovery be turned on or off?
+- Can sensitive issues stay under human control?
+
+These questions reveal whether the tool fits daily operations.
+
+## What good content teams and operations teams care about
+
+They care less about abstract automation and more about predictable routines.
+
+A good routine says: this task runs at this time, on this group, with this expected result, and these exceptions are handled in this way.
+
+Once the routine is clear, automation becomes easier to improve. Without that routine, even advanced AI can feel chaotic.
+
+## A practical first step
+
+Pick one task that wastes time every week. Run it on three cloud phones. Record every place it gets stuck. Then decide which stuck points are safe to automate and which should be reviewed.
+
+That small test will teach more than a large rollout with no clear measurement.
+
+## How QCCBot fits
+
+QCCBot gives teams the pieces to run that test: Android cloud phones, script execution, AI script generation, logs, and exception handling. The goal is to make repeated mobile work easier to operate, not harder to understand.
+
+If this sounds like the kind of mobile work your team deals with, [QCCBot can help you test the workflow on cloud phones and decide what should be automated first](https://www.qccbot.com/).

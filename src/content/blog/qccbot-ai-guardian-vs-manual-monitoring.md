@@ -112,3 +112,50 @@ QCCBot AI Guardian is designed to help cloud phone teams detect stuck tasks and 
 It works alongside script execution, task logs, and AI-assisted exception handling. Teams can reduce repetitive manual monitoring while keeping control over sensitive decisions.
 
 If your team is still watching cloud phone tasks by hand, [QCCBot can help you move from manual monitoring to AI-assisted exception management](https://www.qccbot.com/).
+
+<!-- qccbot-depth:en -->
+
+## What makes this a real operations problem
+
+AI exception recovery for cloud phone tasks becomes difficult when the team has to repeat it across many accounts, apps, or regions. One small issue is easy to fix. The same issue across 40 cloud phones becomes a queue.
+
+That is why the best workflows are not written only around clicks. They are written around decisions:
+
+- Is the app in the expected state?
+- Is the account usable?
+- Did the task move to the next step?
+- Did the system find a known exception?
+- Is this safe to recover automatically?
+- Should this be assigned to a human?
+
+When these decisions are visible, the workflow becomes easier to trust.
+
+## What beginners usually miss
+
+Beginners often start with the script. Experienced operators start with the process.
+
+The script is only one part of the system. The full workflow also needs:
+
+- device grouping;
+- account separation;
+- task status;
+- logs;
+- retry rules;
+- exception labels;
+- a review queue.
+
+Without those pieces, a script may work in a demo but fail in daily operations.
+
+## How to avoid making the workflow too complicated
+
+The answer is not to add more automation everywhere. Start by removing ambiguity.
+
+Use short task names. Keep each workflow focused. Separate normal results from abnormal results. Do not mix account risk, network loading, UI changes, and permission popups into the same failure bucket.
+
+A workflow that clearly says "these 6 devices need login review" is more useful than a workflow that simply says "6 tasks failed."
+
+## Where QCCBot naturally fits
+
+QCCBot is useful when AI exception recovery for cloud phone tasks needs to happen inside real Android app environments, not just browser tabs or API calls. Cloud phones provide the Android runtime. AutoJS scripts run the repeated steps. AI assistance helps generate, debug, and recover suitable script flows. Logs make the result reviewable.
+
+If this sounds like the kind of mobile work your team deals with, [QCCBot can help you test the workflow on cloud phones and decide what should be automated first](https://www.qccbot.com/).

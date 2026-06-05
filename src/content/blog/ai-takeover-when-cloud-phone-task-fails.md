@@ -109,3 +109,49 @@ When AI takeover is enabled, QCCBot can attempt to recover suitable exceptions i
 For teams managing many mobile accounts, this is the difference between "automation failed" and "automation produced a useful next step."
 
 If your team is trying to reduce manual checking after failed cloud phone tasks, [QCCBot explains how AI takeover supports cloud phone automation](https://www.qccbot.com/).
+
+<!-- qccbot-depth:en -->
+
+## Common mistakes to avoid
+
+Teams usually run into trouble with AI exception recovery for cloud phone tasks for predictable reasons.
+
+The first mistake is trying to automate too much at once. A long task with ten uncertain screens is hard to debug. It is better to automate one clean part first, then expand after the team understands the exceptions.
+
+The second mistake is ignoring account state. Many failures are not script failures. The account may be logged out, limited, waiting for verification, or sitting on a page the script did not expect.
+
+The third mistake is treating every popup as safe. Some prompts can be closed. Some should be allowed. Some should stop the workflow and ask for human review.
+
+## A better workflow pattern
+
+A more reliable pattern looks like this:
+
+1. Prepare the cloud phone group.
+2. Confirm the account or app is in the expected starting state.
+3. Run one focused script task.
+4. Record the stage reached by each device.
+5. Retry only the failures that are safe to retry.
+6. Group the remaining failures by reason.
+7. Let humans review the sensitive cases.
+
+This pattern is simple, but it prevents a lot of wasted time.
+
+## What a good result should look like
+
+The output should be readable by an operator, not only a developer.
+
+A useful result might say:
+
+- 32 devices completed normally;
+- 5 devices hit a network retry screen;
+- 3 accounts need login review;
+- 2 devices stopped on a permission prompt;
+- 1 device needs script adjustment.
+
+That result gives the team a next step. A plain "failed" status does not.
+
+## Why this is not a technical-paper problem
+
+Most teams do not need a complicated architecture diagram to get started. They need a clear way to run a mobile task, see what happened, and avoid checking every phone manually.
+
+If this sounds like the kind of mobile work your team deals with, [QCCBot can help you test the workflow on cloud phones and decide what should be automated first](https://www.qccbot.com/).
