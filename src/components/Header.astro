@@ -67,6 +67,11 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 		align-items: center;
 		justify-content: space-between;
 	}
+	.internal-links {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+	}
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
@@ -87,6 +92,25 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 		align-items: center;
 	}
 	@media (max-width: 720px) {
+		header {
+			padding: 0 0.6em;
+		}
+		.brand span {
+			display: none;
+		}
+		nav {
+			gap: 0.5rem;
+			justify-content: flex-start;
+		}
+		.internal-links {
+			margin-left: 0.25rem;
+			justify-content: flex-start;
+		}
+		nav a {
+			padding-right: 0.35em;
+			padding-left: 0.35em;
+			font-size: 0.95rem;
+		}
 		.social-links {
 			display: none;
 		}
