@@ -1,61 +1,104 @@
 ---
-title: 'Cloud Phone Account Logged Out? First Separate Login Problems From Script Problems'
-description: 'How to think about mobile account logout, verification prompts, and abnormal login states in cloud phone automation.'
+title: 'Cloud Phone Account Logged Out? How to Tell Login Problems From Script Problems'
+description: 'A practical guide to diagnosing account logout, verification prompts, security warnings, and abnormal login states in cloud phone automation.'
 pubDate: 'Jun 05 2026'
 heroImage: '../../assets/qccbot-isolated-cloud-phones-account-matrices-cover.png'
 ---
 
-Account logout is common in multi-account mobile operations.
+When a cloud phone task fails, many teams blame the script first.
 
-It does not always mean something serious happened. But if the team discovers it too late, daily tasks may already be affected.
+Sometimes the script is the problem. But very often the account is simply in a different state than expected.
 
-## The user problem
+It may be logged out. It may need verification. It may be blocked by a security prompt. It may ask the user to update profile information before continuing.
 
-Many people see a failed task and assume the script is broken.
+If you treat all of these as script errors, you will waste time fixing the wrong thing.
 
-In reality, the mobile account may be in a different state:
+## Start with the screen, not the script
 
-- The login session expired.
-- A verification code is required.
-- The app asks for authorization again.
-- A security prompt interrupts the flow.
-- The app asks the user to update account information.
-- A region or network condition is unstable.
+Before changing a script, ask what the cloud phone is showing.
 
-These issues should not all be handled in the same way.
+Is it still inside the app? Is it on the home page? Is it on a login page? Is there a verification prompt? Is there a warning that should not be skipped?
 
-## A real scene
+This sounds basic, but it changes the troubleshooting path.
 
-Suppose a team manages 60 social accounts.
+A script error usually means the automation could not complete an expected step. An account state issue means the account is not ready for that step.
 
-In the daily check, 55 accounts are normal and 5 are logged out.
+Those require different responses.
 
-If the system cannot separate those 5 accounts from the rest, the operator may have to open all 60 cloud phones to find the problem.
+## Common account states that break automation
 
-That is where time disappears.
+Here are account-related states teams often see:
 
-## A better workflow
+- The session expired and the app returned to login.
+- The app requests a verification code.
+- The account needs reauthorization.
+- A security warning blocks the next page.
+- The app asks the user to update profile or contact information.
+- The region or network environment causes unstable access.
+- The account is temporarily limited or under review.
 
-The cleaner approach is:
+Some of these can be retried. Some should be escalated.
 
-- Run an account check task first.
-- Use AI to help detect login pages or abnormal screens.
-- Handle safe, simple issues automatically.
-- Mark accounts that need human confirmation.
-- Let operators focus only on abnormal accounts.
+The important part is to label them correctly.
 
-## The difficult part
+## A real workflow example
 
-Login problems are not always safe to automate.
+Imagine a team manages 60 mobile social accounts.
 
-Some retries are fine. But verification codes, security checks, and account risk prompts should usually be reviewed by a person.
+Each morning, the team runs a status check:
 
-The value of AI is not blind clicking. The value is classification, controlled takeover, and better task routing.
+- open the app;
+- confirm the account reaches the home page;
+- browse a few screens;
+- record normal or abnormal.
 
-## How QCCBot fits
+On one day, 55 accounts pass and 5 accounts fail.
 
-QCCBot uses cloud phone groups, task logs, and AI exception recognition to separate account problems from ordinary script failures.
+If the dashboard only says "5 failed," the operator still has to inspect all 5 devices manually. If the system says "3 login expired, 1 verification required, 1 network retry," the team already knows what to do.
 
-Teams can see which accounts are normal, which need human attention, and which only hit a common popup or network issue.
+That is the difference between failure reporting and useful diagnosis.
 
-If your team manages many mobile accounts, [QCCBot shows how AI cloud phones can help organize account status and exception tasks](https://www.qccbot.com/).
+## What should be automated and what should not
+
+Not every login problem should be handled automatically.
+
+Usually safe:
+
+- refreshing a slow page;
+- navigating back to a known page;
+- closing a non-sensitive popup;
+- retrying a login-status check;
+- recording that an account is logged out.
+
+Usually not safe:
+
+- entering verification codes without review;
+- bypassing account security prompts;
+- changing account details;
+- clicking through risk warnings;
+- taking actions that could affect account safety.
+
+Good automation respects those boundaries.
+
+## Build an abnormal-account queue
+
+For teams with many accounts, the goal is not to make every issue disappear automatically.
+
+The goal is to create a clean queue:
+
+- normal accounts;
+- accounts with safe recoverable issues;
+- accounts that need human review;
+- accounts that should be paused.
+
+This prevents operators from opening every cloud phone just to discover which ones need attention.
+
+## How QCCBot helps
+
+QCCBot can use cloud phone grouping, task logs, AutoJS scripts, and AI-assisted exception recognition to separate account-state problems from script problems.
+
+If a task stops on a login page, the team can see that it is an account issue. If a task stops because a UI button moved, the team can treat it as a script issue. If a sensitive verification prompt appears, it can be marked for human review.
+
+For multi-account mobile operations, this kind of classification is more valuable than a simple success or failure label.
+
+If your team is trying to manage login states across many mobile accounts, [QCCBot can help organize account checks and cloud phone exception workflows](https://www.qccbot.com/).

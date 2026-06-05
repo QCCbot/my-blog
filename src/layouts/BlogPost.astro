@@ -35,7 +35,7 @@ const articleUrl = new URL(Astro.url.pathname, 'https://blog.qccbot.com').toStri
 const shareText = encodeURIComponent(title);
 const shareUrl = encodeURIComponent(articleUrl);
 const articleHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
-const keySections = headings.filter((heading) => heading.depth === 2).slice(0, 4);
+const keySections = headings.filter((heading) => heading.depth === 2).slice(0, 6);
 const plainBody = body
 	.replace(/```[\s\S]*?```/g, ' ')
 	.replace(/<[^>]+>/g, ' ')
@@ -516,14 +516,14 @@ const category = lowerTitle.includes('autojs')
 					</aside>
 
 					<div class="article-main">
-						<section class="key-card" id="key-sections">
-							<h2>Key sections</h2>
-							<ul>
-								<li>What problem this article helps solve</li>
-								{keySections.map((heading) => <li>{heading.text}</li>)}
-								<li>Where QCCBot fits into the workflow</li>
-							</ul>
-						</section>
+						{
+							keySections.length > 0 && (
+								<section class="key-card" id="key-sections">
+									<h2>What this article covers</h2>
+									<ul>{keySections.map((heading) => <li>{heading.text}</li>)}</ul>
+								</section>
+							)
+						}
 
 						<section class="reader-cta" aria-label="QCCBot workflow callout">
 							<strong>Working through a similar mobile workflow?</strong>
