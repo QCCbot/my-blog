@@ -18,6 +18,7 @@ type Props = BlogData & {
 	relatedPosts?: RelatedPost[];
 	slug?: string;
 	body?: string;
+	hideMeta?: boolean;
 };
 
 const {
@@ -29,6 +30,7 @@ const {
 	headings = [],
 	relatedPosts = [],
 	body = '',
+	hideMeta = false,
 } = Astro.props;
 
 const articleUrl = new URL(Astro.url.pathname, 'https://blog.qccbot.com').toString();
@@ -463,18 +465,22 @@ const category = lowerTitle.includes('autojs')
 						<h1>{title}</h1>
 						<p class="subtitle">{description}</p>
 						<div class="hero-footer">
-							<div class="post-meta">
-								<span>QCCBot Editorial</span>
-								<span><FormattedDate date={pubDate} /></span>
-								<span>{readingTime} min read</span>
-								{
-									updatedDate && (
+							{
+								!hideMeta && (
+									<div class="post-meta">
+										<span>QCCBot Editorial</span>
 										<span>
-											Updated <FormattedDate date={updatedDate} />
+											<FormattedDate date={pubDate} />
 										</span>
-									)
-								}
-							</div>
+										<span>{readingTime} min read</span>
+										{updatedDate && (
+											<span>
+												Updated <FormattedDate date={updatedDate} />
+											</span>
+										)}
+									</div>
+								)
+							}
 							<div class="share-row" aria-label="Share this article">
 								<a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`} target="_blank"
 									>LinkedIn</a
