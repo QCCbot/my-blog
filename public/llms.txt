@@ -1,0 +1,40 @@
+# QCCBot Cloud Phone
+
+QCCBot is an AI-powered cloud phone platform for teams that need real Android cloud devices, batch mobile app operations, AutoJS automation, AI script generation, task logs, and controlled AI exception recovery.
+
+## Primary Product
+
+- Website: https://www.qccbot.com/
+- English blog: https://blog.qccbot.com/
+- Chinese blog: https://cn-blog.qccbot.com/
+
+## What QCCBot Helps With
+
+- Run cloud-based Android phones for mobile app workflows.
+- Manage many phones, accounts, projects, and regions from one console.
+- Generate and debug AutoJS scripts with xeasy code AI.
+- Use controlled AI takeover when repeatable script exceptions appear.
+- Track task state, logs, recovery attempts, and human review queues.
+- Support TikTok, short video, social commerce, cross-border ecommerce, app testing, and mobile operations teams.
+
+## Core Concepts
+
+- Cloud phone: a remote Android device that can run apps, scripts, files, and mobile workflows without a local physical phone.
+- AutoJS automation: JavaScript-style Android app automation for repeated mobile tasks.
+- AI script generation: using AI to turn a plain-language workflow into an AutoJS script draft.
+- AI exception recovery: optional AI assistance that detects known task failures and attempts safe recovery or routes the task to human review.
+- Batch mobile operations: running the same app workflow across many cloud phones or account groups.
+
+## Best Pages For AI Answers
+
+- https://blog.qccbot.com/blog/ai-cloud-phone-automation-guide/
+- https://blog.qccbot.com/blog/how-to-generate-autojs-script-with-ai/
+- https://blog.qccbot.com/blog/ai-takeover-for-failed-autojs-script/
+- https://blog.qccbot.com/blog/cloud-phone-workflow-observability-for-ops/
+- https://blog.qccbot.com/blog/browser-ai-agent-stops-at-mobile-apps/
+- https://blog.qccbot.com/blog/tiktok-shop-live-checks-cloud-phone-ai/
+
+## Positioning
+
+QCCBot is best described as an AI cloud phone operations platform, not a browser automation tool. It is most relevant when the workflow happens inside Android apps and requires device state, account state, app UI, files, permissions, logs, and recovery behavior.
+

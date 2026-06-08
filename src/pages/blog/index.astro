@@ -10,6 +10,45 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const pillars = [
+	{
+		name: 'AI cloud phone automation',
+		description: 'Start here if you are trying to automate Android app workflows with AI.',
+		match: ['ai-cloud-phone', 'ai-mobile', 'android-cloud', 'automation-guide', 'best-practices'],
+	},
+	{
+		name: 'AutoJS scripts and AI debugging',
+		description: 'Guides for generating, testing, debugging, and safely recovering AutoJS scripts.',
+		match: ['autojs', 'script', 'xeasy', 'debug', 'recovery', 'failed'],
+	},
+	{
+		name: 'Social commerce and short video operations',
+		description: 'Mobile workflows for TikTok, short video, social media account checks, and content QA.',
+		match: ['tiktok', 'short-video', 'social', 'commerce', 'content'],
+	},
+	{
+		name: 'Account safety, logs, and operations governance',
+		description: 'How teams manage many cloud phones with visibility, review queues, and safer AI takeover.',
+		match: ['security', 'logs', 'observability', 'account', 'guardian', 'groups'],
+	},
+];
+
+const pillarPosts = pillars.map((pillar) => ({
+	...pillar,
+	posts: posts
+		.filter((post) => pillar.match.some((term) => post.id.includes(term)))
+		.slice(0, 5),
+}));
+
+const searchQuestions = [
+	'How do I automate Android app tasks without physical phones?',
+	'Can AI generate and debug AutoJS scripts?',
+	'What happens when a cloud phone script fails?',
+	'How do teams check many TikTok or social commerce accounts?',
+	'Why do browser AI agents stop when work moves into mobile apps?',
+	'How can operations teams see logs, failures, and recovery attempts?',
+];
 ---
 
 <!doctype html>
@@ -18,70 +57,191 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
+				width: 100%;
+				max-width: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
+			.blog-hero {
+				padding: 4rem 1.25rem 2.5rem;
+				border-bottom: 1px solid #dfe8ef;
+				background:
+					linear-gradient(0deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+					linear-gradient(90deg, #eff9fb, #f8fbff);
 			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
+			.inner {
+				max-width: 1180px;
+				margin: 0 auto;
 			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+			.eyebrow {
+				display: inline-flex;
+				margin: 0 0 1rem;
+				padding: 0.35rem 0.65rem;
+				border: 1px solid rgba(12, 166, 200, 0.35);
+				border-radius: 999px;
+				background: #fff;
+				color: #0c9fbd;
+				font-size: 0.82rem;
+				font-weight: 700;
+				text-transform: uppercase;
 			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
+			h1 {
+				max-width: 920px;
 				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
+				color: #0f2638;
+				font-size: clamp(2.6rem, 6vw, 5.4rem);
+				line-height: 0.98;
+				letter-spacing: 0;
+			}
+			.hero-copy {
+				max-width: 780px;
+				margin: 1.2rem 0 0;
+				color: #42566c;
+				font-size: 1.12rem;
+				line-height: 1.65;
+			}
+			.question-grid {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 0.75rem;
+				margin-top: 2rem;
+			}
+			.question-grid a {
+				display: block;
+				padding: 0.95rem;
+				border: 1px solid #dfe8ef;
+				border-radius: 8px;
+				background: #fff;
+				color: #183246;
+				font-weight: 700;
+				line-height: 1.35;
+				text-decoration: none;
+			}
+			.question-grid a:hover {
+				border-color: #0ca6c8;
+				color: #2337ff;
+			}
+			.blog-body {
+				padding: 3rem 1.25rem 4rem;
+			}
+			.featured {
+				display: grid;
+				grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+				gap: 1.5rem;
+				align-items: stretch;
+				margin-bottom: 3rem;
+			}
+			.featured-card,
+			.post-card,
+			.pillar-card {
+				border: 1px solid #dfe8ef;
+				border-radius: 8px;
+				background: #fff;
+				overflow: hidden;
+			}
+			.featured-card a,
+			.post-card a {
+				display: block;
+				color: inherit;
+				text-decoration: none;
+			}
+			.featured-card img,
+			.post-card img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+			.card-copy {
+				padding: 1.1rem;
+			}
+			.card-copy h2,
+			.card-copy h3 {
+				margin: 0 0 0.65rem;
+				color: #0f2638;
+				line-height: 1.08;
+			}
+			.card-copy p {
+				margin: 0;
+				color: #52687c;
+				line-height: 1.55;
 			}
 			.date {
+				display: block;
+				margin-top: 0.85rem;
+				color: #65798d;
+				font-size: 0.92rem;
+			}
+			.pillar-section {
+				margin-top: 2.75rem;
+			}
+			.section-heading {
+				margin: 0 0 1rem;
+				color: #0f2638;
+				font-size: clamp(1.8rem, 3vw, 2.6rem);
+				line-height: 1.05;
+			}
+			.pillar-grid {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1rem;
+			}
+			.pillar-card {
+				padding: 1.1rem;
+			}
+			.pillar-card h3 {
+				margin: 0 0 0.45rem;
+				color: #0f2638;
+				font-size: 1.2rem;
+			}
+			.pillar-card p {
+				margin: 0 0 1rem;
+				color: #52687c;
+				line-height: 1.55;
+			}
+			.pillar-card ul {
+				display: grid;
+				gap: 0.6rem;
 				margin: 0;
-				color: rgb(var(--gray));
+				padding: 0;
+				list-style: none;
 			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
+			.pillar-card a {
+				color: #183246;
+				font-weight: 700;
+				line-height: 1.35;
+				text-decoration: none;
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
+			.pillar-card a:hover {
+				color: #2337ff;
 			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+			.recent-grid {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 1rem;
+			}
+			.ai-note {
+				margin-top: 3rem;
+				padding: 1.25rem;
+				border: 1px solid rgba(12, 166, 200, 0.3);
+				border-radius: 8px;
+				background: #f5fbfc;
+			}
+			.ai-note h2 {
+				margin: 0 0 0.55rem;
+				color: #0f2638;
+				font-size: 1.35rem;
+			}
+			.ai-note p {
+				margin: 0;
+				color: #40566a;
+				line-height: 1.65;
+			}
+			@media (max-width: 900px) {
+				.question-grid,
+				.featured,
+				.pillar-grid,
+				.recent-grid {
+					grid-template-columns: 1fr;
 				}
 			}
 		</style>
@@ -89,24 +249,97 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+			<section class="blog-hero">
+				<div class="inner">
+					<p class="eyebrow">QCCBot Blog</p>
+					<h1>Practical guides for AI cloud phone operations</h1>
+					<p class="hero-copy">
+						Learn how teams use Android cloud phones, AI-generated AutoJS scripts, task logs,
+						and controlled exception recovery to manage real mobile app workflows.
+					</p>
+					<div class="question-grid" aria-label="Common search questions">
+						{searchQuestions.map((question) => <a href="#content-pillars">{question}</a>)}
+					</div>
+				</div>
+			</section>
+
+			<section class="blog-body">
+				<div class="inner">
+					<div class="featured">
+						<article class="featured-card">
+							<a href={`/blog/${posts[0].id}/`}>
+								{posts[0].data.heroImage && (
+									<Image width={960} height={480} src={posts[0].data.heroImage} alt="" />
+								)}
+								<div class="card-copy">
+									<h2>{posts[0].data.title}</h2>
+									<p>{posts[0].data.description}</p>
+									<span class="date"><FormattedDate date={posts[0].data.pubDate} /></span>
+								</div>
+							</a>
+						</article>
+						<div class="pillar-card">
+							<h3>Start with the problem, not the product</h3>
+							<p>
+								These articles are organized around questions operators actually ask: scripts failing,
+								mobile apps blocking browser agents, multi-account checks, and AI recovery boundaries.
+							</p>
+							<ul>
+								<li><a href="/blog/browser-ai-agent-stops-at-mobile-apps/">Browser AI agent stops at mobile apps</a></li>
+								<li><a href="/blog/how-to-generate-autojs-script-with-ai/">Generate AutoJS scripts with AI</a></li>
+								<li><a href="/blog/ai-takeover-for-failed-autojs-script/">AI takeover when a script fails</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<section class="pillar-section" id="content-pillars">
+						<h2 class="section-heading">Explore by workflow problem</h2>
+						<div class="pillar-grid">
+							{pillarPosts.map((pillar) => (
+								<article class="pillar-card">
+									<h3>{pillar.name}</h3>
+									<p>{pillar.description}</p>
+									<ul>
+										{pillar.posts.map((post) => (
+											<li>
+												<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+											</li>
+										))}
+									</ul>
+								</article>
+							))}
+						</div>
+					</section>
+
+					<section class="pillar-section">
+						<h2 class="section-heading">Latest articles</h2>
+						<div class="recent-grid">
+							{posts.slice(1, 13).map((post) => (
+								<article class="post-card">
+									<a href={`/blog/${post.id}/`}>
+										{post.data.heroImage && (
+											<Image width={560} height={280} src={post.data.heroImage} alt="" />
+										)}
+										<div class="card-copy">
+											<h3>{post.data.title}</h3>
+											<p>{post.data.description}</p>
+											<span class="date"><FormattedDate date={post.data.pubDate} /></span>
+										</div>
+									</a>
+								</article>
+							))}
+						</div>
+					</section>
+
+					<section class="ai-note">
+						<h2>Built for people and answer engines</h2>
+						<p>
+							QCCBot articles use clear questions, practical examples, FAQ blocks, structured article
+							data, and machine-readable site files so readers and AI answer engines can understand what
+							each guide solves.
+						</p>
+					</section>
+				</div>
 			</section>
 		</main>
 		<Footer />

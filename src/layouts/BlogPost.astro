@@ -36,6 +36,7 @@ const {
 const articleUrl = new URL(Astro.url.pathname, 'https://blog.qccbot.com').toString();
 const shareText = encodeURIComponent(title);
 const shareUrl = encodeURIComponent(articleUrl);
+const articleImageUrl = heroImage ? new URL(heroImage.src, Astro.url).toString() : undefined;
 const articleHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 const keySections = headings.filter((heading) => heading.depth === 2).slice(0, 6);
 const plainBody = body
@@ -57,11 +58,94 @@ const category = lowerTitle.includes('autojs')
 			: lowerTitle.includes('shop') || lowerTitle.includes('cross-border')
 				? 'Cross-border workflows'
 				: 'Cloud phone automation';
+
+const faqItems = [
+	{
+		question: 'Is QCCBot only useful for developers?',
+		answer:
+			'No. Operators can describe mobile app tasks in plain language, then use xeasy code AI to generate or refine AutoJS scripts before testing them on QCCBot cloud phones.',
+	},
+	{
+		question: 'Can AI recover every failed cloud phone script?',
+		answer:
+			'No. AI takeover is best for recognizable and repeatable issues. Account verification, security prompts, payment steps, and sensitive account actions should still be reviewed by humans.',
+	},
+	{
+		question: 'Why use cloud phones instead of physical phones?',
+		answer:
+			'Cloud phones are easier to group, monitor, script, and recover at scale, especially when teams manage many Android app accounts, regions, or repeated mobile workflows.',
+	},
+];
+
+const answerSummary =
+	`${description} QCCBot is most useful when a team needs real Android cloud phones, AI-generated AutoJS scripts, batch task logs, and controlled AI recovery for mobile app workflows that browser agents cannot complete.`;
+
+const socialAngle = `If your team still opens phones by hand to check mobile app tasks, this guide explains where AI cloud phones fit: ${title}`;
+
+const structuredData = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BlogPosting',
+		headline: title,
+		description,
+		mainEntityOfPage: articleUrl,
+		url: articleUrl,
+		image: articleImageUrl,
+		datePublished: pubDate.toISOString(),
+		dateModified: (updatedDate ?? pubDate).toISOString(),
+		articleSection: category,
+		inLanguage: 'en-US',
+		author: {
+			'@type': 'Organization',
+			name: 'QCCBot Editorial',
+			url: 'https://www.qccbot.com/',
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'QCCBot',
+			logo: {
+				'@type': 'ImageObject',
+				url: new URL('/qccbot-icon.png', Astro.site).toString(),
+			},
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'QCCBot Blog',
+				item: new URL('/blog/', Astro.site).toString(),
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: title,
+				item: articleUrl,
+			},
+		],
+	},
+];
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage} type="article" />
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 		<style>
 			:root {
 				--qccbot-navy: #0f2638;
@@ -258,6 +342,25 @@ const category = lowerTitle.includes('autojs')
 				margin: 0;
 				padding-left: 1.15rem;
 			}
+			.answer-card {
+				margin-bottom: 1.4rem;
+				padding: 1.1rem;
+				border: 1px solid rgba(12, 166, 200, 0.26);
+				border-radius: 8px;
+				background: #fbfeff;
+			}
+			.answer-card h2 {
+				margin: 0 0 0.55rem;
+				color: var(--qccbot-navy);
+				font-size: 1.2rem;
+				line-height: 1.25;
+			}
+			.answer-card p {
+				margin: 0;
+				color: #40566a;
+				font-size: 1rem;
+				line-height: 1.65;
+			}
 			.reader-cta {
 				margin: 1.4rem 0 2.25rem;
 				padding: 1.15rem;
@@ -421,6 +524,16 @@ const category = lowerTitle.includes('autojs')
 			.rail-share {
 				margin-top: 1rem;
 			}
+			.social-angle {
+				margin-top: 1rem;
+				padding: 1rem;
+			}
+			.social-angle p {
+				margin: 0;
+				color: #40566a;
+				font-size: 0.9rem;
+				line-height: 1.55;
+			}
 			@media (max-width: 1180px) {
 				.article-shell {
 					grid-template-columns: minmax(170px, 220px) minmax(0, 760px);
@@ -522,6 +635,11 @@ const category = lowerTitle.includes('autojs')
 					</aside>
 
 					<div class="article-main">
+						<section class="answer-card" aria-label="Quick answer">
+							<h2>Quick answer</h2>
+							<p>{answerSummary}</p>
+						</section>
+
 						{
 							keySections.length > 0 && (
 								<section class="key-card" id="key-sections">
@@ -548,25 +666,16 @@ const category = lowerTitle.includes('autojs')
 							<h2>FAQ</h2>
 							<div class="faq-list">
 								<div class="faq-item">
-									<h3>Is this only useful for developers?</h3>
-									<p>
-										No. Operators can describe the task, then use xeasy code to generate or refine AutoJS
-										scripts before testing them on cloud phones.
-									</p>
+									<h3>{faqItems[0].question}</h3>
+									<p>{faqItems[0].answer}</p>
 								</div>
 								<div class="faq-item">
-									<h3>Can AI recover every failed script?</h3>
-									<p>
-										No. AI takeover is best for recognizable and repeatable issues. Account verification,
-										security prompts, and sensitive steps should still be reviewed by humans.
-									</p>
+									<h3>{faqItems[1].question}</h3>
+									<p>{faqItems[1].answer}</p>
 								</div>
 								<div class="faq-item">
-									<h3>Why use cloud phones instead of physical phones?</h3>
-									<p>
-										Cloud phones are easier to group, monitor, script, and recover at scale, especially when
-										teams manage many app accounts or repeated mobile workflows.
-									</p>
+									<h3>{faqItems[2].question}</h3>
+									<p>{faqItems[2].answer}</p>
 								</div>
 							</div>
 						</section>
@@ -619,6 +728,10 @@ const category = lowerTitle.includes('autojs')
 									>X</a
 								>
 							</div>
+						</div>
+						<div class="sidebar-card social-angle">
+							<p class="sidebar-title">Social angle</p>
+							<p>{socialAngle}</p>
 						</div>
 					</aside>
 				</div>
