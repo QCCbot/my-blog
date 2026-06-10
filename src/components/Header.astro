@@ -105,31 +105,28 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 	.language-switch {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.15rem;
-		padding: 0.18rem;
-		border: 1px solid #d7e7e2;
-		border-radius: 14px;
-		background: #fbfefd;
-		box-shadow: inset 0 0 0 1px rgba(12, 166, 200, 0.03);
+		gap: 0.1rem;
+		padding: 0;
+		border-radius: 9px;
+		background: transparent;
 	}
 	.language-option {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		min-width: 2.55rem;
-		min-height: 2.25rem;
-		padding: 0 0.55rem;
+		min-width: 2.15rem;
+		min-height: 1.85rem;
+		padding: 0 0.45rem;
 		border: 0;
-		border-radius: 10px;
-		color: #63746f;
+		border-radius: 8px;
+		color: #485760;
 		font-weight: 800;
 		line-height: 1;
 		text-decoration: none;
 	}
 	.language-option.active {
-		background: #fff;
-		color: #27755e;
-		box-shadow: 0 10px 22px rgba(15, 38, 56, 0.08);
+		background: rgba(12, 166, 200, 0.08);
+		color: #147f8e;
 	}
 	.telegram-link {
 		color: #229ed9;
@@ -158,13 +155,13 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 			font-size: 0.95rem;
 		}
 		.language-switch {
-			border-radius: 12px;
+			border-radius: 9px;
 		}
 		.language-option {
-			min-width: 2rem;
-			min-height: 2rem;
-			padding: 0 0.4rem;
-			font-size: 0.9rem;
+			min-width: 1.85rem;
+			min-height: 1.75rem;
+			padding: 0 0.35rem;
+			font-size: 0.85rem;
 		}
 		.social-links {
 			margin-left: auto;
