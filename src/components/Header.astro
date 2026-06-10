@@ -17,12 +17,12 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
 			<div class="language-switch" aria-label="Language switcher">
 				<a class="language-option" href={chineseHref}>中</a>
 				<span class="language-option active" aria-current="true">EN</span>
 			</div>
+		</div>
+		<div class="social-links">
 			<a class="telegram-link" href="https://t.me/QCCbot_cloudphone" target="_blank" rel="noopener noreferrer">
 				<span class="sr-only">Contact QCCBot on Telegram</span>
 				<svg viewBox="0 0 24 24" aria-hidden="true" width="30" height="30">
@@ -105,28 +105,23 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 	.language-switch {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.1rem;
-		padding: 0;
-		border-radius: 9px;
+		gap: 0.65rem;
+		margin-left: 0.65rem;
 		background: transparent;
 	}
 	.language-option {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		min-width: 2.15rem;
-		min-height: 1.85rem;
-		padding: 0 0.45rem;
-		border: 0;
-		border-radius: 8px;
-		color: #485760;
+		padding: 1em 0.15em;
+		border-bottom: 4px solid transparent;
+		color: var(--black);
 		font-weight: 800;
 		line-height: 1;
 		text-decoration: none;
 	}
 	.language-option.active {
-		background: rgba(12, 166, 200, 0.08);
-		color: #147f8e;
+		color: var(--accent);
 	}
 	.telegram-link {
 		color: #229ed9;
@@ -155,13 +150,13 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 			font-size: 0.95rem;
 		}
 		.language-switch {
-			border-radius: 9px;
+			gap: 0.4rem;
+			margin-left: 0.15rem;
 		}
 		.language-option {
-			min-width: 1.85rem;
-			min-height: 1.75rem;
-			padding: 0 0.35rem;
-			font-size: 0.85rem;
+			padding-right: 0.15rem;
+			padding-left: 0.15rem;
+			font-size: 0.9rem;
 		}
 		.social-links {
 			margin-left: auto;
