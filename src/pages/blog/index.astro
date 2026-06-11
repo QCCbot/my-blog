@@ -100,6 +100,29 @@ const searchQuestions = [
 				font-size: 1.12rem;
 				line-height: 1.65;
 			}
+			.hero-actions {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin-top: 1.5rem;
+			}
+			.hero-actions a {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 2.6rem;
+				padding: 0 1rem;
+				border: 1px solid #2337ff;
+				border-radius: 8px;
+				background: #2337ff;
+				color: #fff;
+				font-weight: 800;
+				text-decoration: none;
+			}
+			.hero-actions a.secondary {
+				background: #fff;
+				color: #2337ff;
+			}
 			.question-grid {
 				display: grid;
 				grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -236,12 +259,45 @@ const searchQuestions = [
 				color: #40566a;
 				line-height: 1.65;
 			}
+			.all-posts {
+				display: grid;
+				gap: 0.65rem;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.all-posts a {
+				display: grid;
+				grid-template-columns: minmax(0, 1fr) auto;
+				gap: 1rem;
+				align-items: baseline;
+				padding: 0.9rem 0;
+				border-bottom: 1px solid #dfe8ef;
+				color: #183246;
+				text-decoration: none;
+			}
+			.all-posts a:hover strong {
+				color: #2337ff;
+			}
+			.all-posts strong {
+				font-size: 1rem;
+				line-height: 1.35;
+			}
+			.all-posts span {
+				color: #65798d;
+				font-size: 0.9rem;
+				white-space: nowrap;
+			}
 			@media (max-width: 900px) {
 				.question-grid,
 				.featured,
 				.pillar-grid,
 				.recent-grid {
 					grid-template-columns: 1fr;
+				}
+				.all-posts a {
+					grid-template-columns: 1fr;
+					gap: 0.35rem;
 				}
 			}
 		</style>
@@ -257,6 +313,10 @@ const searchQuestions = [
 						Learn how teams use Android cloud phones, AI-generated AutoJS scripts, task logs,
 						and controlled exception recovery to manage real mobile app workflows.
 					</p>
+					<div class="hero-actions">
+						<a href="#all-articles">View all articles</a>
+						<a class="secondary" href="#content-pillars">Browse by topic</a>
+					</div>
 					<div class="question-grid" aria-label="Common search questions">
 						{searchQuestions.map((question) => <a href="#content-pillars">{question}</a>)}
 					</div>
@@ -339,6 +399,20 @@ const searchQuestions = [
 							data, and machine-readable site files so readers and AI answer engines can understand what
 							each guide solves.
 						</p>
+					</section>
+
+					<section class="pillar-section" id="all-articles">
+						<h2 class="section-heading">All articles</h2>
+						<ul class="all-posts">
+							{posts.map((post) => (
+								<li>
+									<a href={`/blog/${post.id}/`}>
+										<strong>{post.data.title}</strong>
+										<span><FormattedDate date={post.data.pubDate} /></span>
+									</a>
+								</li>
+							))}
+						</ul>
 					</section>
 				</div>
 			</section>
