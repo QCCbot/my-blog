@@ -1,6 +1,6 @@
 ---
 const cloudflareToken = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-0S64R69X9V';
 const baiduAnalyticsId = import.meta.env.PUBLIC_BAIDU_ANALYTICS_ID;
 const hasEventAnalytics = Boolean(gaMeasurementId || baiduAnalyticsId);
 ---
