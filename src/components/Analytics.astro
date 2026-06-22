@@ -1,0 +1,111 @@
+---
+const cloudflareToken = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const baiduAnalyticsId = import.meta.env.PUBLIC_BAIDU_ANALYTICS_ID;
+const hasEventAnalytics = Boolean(gaMeasurementId || baiduAnalyticsId);
+---
+
+{
+	cloudflareToken && (
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon={JSON.stringify({ token: cloudflareToken })}
+		/>
+	)
+}
+
+{
+	gaMeasurementId && (
+		<>
+			<script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} />
+			<script is:inline define:vars={{ gaMeasurementId }}>
+				window.dataLayer = window.dataLayer || [];
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				gtag('js', new Date());
+				gtag('config', gaMeasurementId);
+			</script>
+		</>
+	)
+}
+
+{
+	baiduAnalyticsId && (
+		<script is:inline define:vars={{ baiduAnalyticsId }}>
+			window._hmt = window._hmt || [];
+			(function () {
+				var hm = document.createElement('script');
+				hm.src = 'https://hm.baidu.com/hm.js?' + baiduAnalyticsId;
+				var firstScript = document.getElementsByTagName('script')[0];
+				firstScript.parentNode.insertBefore(hm, firstScript);
+			})();
+		</script>
+	)
+}
+
+{
+	hasEventAnalytics && (
+		<script is:inline>
+			(function () {
+				function cleanText(text) {
+					return (text || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+				}
+
+				function sectionFor(link) {
+					if (link.closest('header')) return 'header';
+					if (link.closest('footer')) return 'footer';
+					if (link.closest('article')) return 'article';
+					if (link.closest('main')) return 'main';
+					return 'page';
+				}
+
+				function trackLink(link) {
+					var href = link.href;
+					if (!href) return;
+
+					var label = cleanText(link.getAttribute('aria-label') || link.textContent || link.href);
+					var targetHost = '';
+
+					try {
+						targetHost = new URL(href).hostname;
+					} catch (_error) {
+						targetHost = '';
+					}
+
+					var payload = {
+						link_url: href,
+						link_text: label,
+						link_location: sectionFor(link),
+						link_host: targetHost,
+						is_outbound: targetHost && targetHost !== window.location.hostname,
+						page_path: window.location.pathname,
+					};
+
+					if (typeof window.gtag === 'function') {
+						window.gtag('event', 'blog_link_clicked', payload);
+					}
+
+					if (Array.isArray(window._hmt)) {
+						window._hmt.push([
+							'_trackEvent',
+							'blog',
+							'link_clicked',
+							payload.link_location + ': ' + payload.link_text + ' -> ' + payload.link_url,
+						]);
+					}
+				}
+
+				document.addEventListener(
+					'click',
+					function (event) {
+						var link = event.target.closest && event.target.closest('a[href]');
+						if (link) trackLink(link);
+					},
+					true,
+				);
+			})();
+		</script>
+	)
+}
