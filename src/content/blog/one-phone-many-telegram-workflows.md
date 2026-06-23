@@ -1,7 +1,7 @@
 ---
 title: 'When One Operator Handles Many Telegram Accounts, the Problem Is Usually the System'
 description: 'Multi-account Telegram operations are not just about remembering accounts. Teams need clearer environments, ownership, and handoff context.'
-pubDate: 'Jun 22 2026'
+pubDate: 'Jun 23 2026'
 heroImage: '../../assets/qccbot-cross-border-ecommerce-ai-operations-cover.png'
 ---
 
