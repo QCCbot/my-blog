@@ -1,83 +1,85 @@
 ---
-title: 'How to Use Telegram Safely When Opening Cloud Phones'
-description: 'A simple guide for teams that open QCCBot from Telegram and want to keep login codes, private messages, and account details safe.'
+title: 'How to Protect Account Information When Coordinating Cloud Phone Tasks in Telegram'
+description: 'Teams can share QCCBot cloud phone links in Telegram, but login codes, private messages, and account details should stay inside the cloud phone session.'
 pubDate: 'Jun 22 2026'
 heroImage: '../../assets/qccbot-isolated-cloud-phones-account-matrices-cover.png'
 ---
 
-Opening a cloud phone link from Telegram is convenient.
+Telegram is a practical coordination tool for mobile operations teams. Managers can share task notes, operators can report progress, and team members can quickly confirm which account or device needs attention.
 
-A teammate sends you a QCCBot link. You tap it, open the cloud phone list, and enter a remote Android device. Inside that device, you may open Telegram or see a Telegram login screen.
+When QCCBot cloud phones are part of the workflow, Telegram is often used to share the entry link. An operator opens the QCCBot link from chat, enters the cloud phone list, and continues work inside the selected remote Android device.
 
-The flow is useful. The part that needs care is simple: do not copy sensitive information from the cloud phone back into the outside Telegram chat.
+That workflow is efficient, but it needs a clear rule: account information should stay inside the cloud phone session, not in the external chat thread.
 
-## Why mistakes happen
+## Two different environments
 
-The confusing part is that Telegram can appear in two places.
+There are two environments involved in this workflow.
 
-There is the Telegram app on your physical phone, where you received the QCCBot link and talk with teammates.
+The first is the external Telegram conversation. It is used for task handoff, team coordination, and sharing the QCCBot entry link.
 
-Then there is the Telegram app inside the cloud phone, which may belong to a business account or project workflow.
+The second is the QCCBot cloud phone session. This is where the remote Android device runs, and where apps such as Telegram may contain business account information, private messages, login states, or customer context.
 
-If people do not separate these two places, mistakes happen. For example, the cloud phone asks for a login code. Someone asks for the code in the team chat. Another person sends it there. Now a private login detail has moved into chat history.
+The team can use chat to coordinate the work, while keeping account-level actions inside the cloud phone.
 
-That is the risk.
+## Information that is safe to share
 
-## What is okay to share
+External Telegram messages should focus on operational context rather than account secrets.
 
-Some information is fine to share in the team chat:
+Useful handoff details include:
 
-- the QCCBot link;
+- the QCCBot entry link;
 - the cloud phone ID;
-- a status like "this phone is running";
-- a note like "Telegram is on the login screen";
-- a handoff like "this device needs manual review";
-- a short update that the task is done.
+- whether the device is running;
+- which operator owns the next step;
+- whether the task is complete;
+- whether manual review is needed.
 
-These messages help the team coordinate without exposing account data.
+These details help the team move quickly without exposing the contents of the account.
 
-## What should not be shared
+## Information that should stay in the cloud phone
 
-Do not send login codes.
+Sensitive account information should remain inside the QCCBot session.
 
-Do not send passwords.
+This includes:
 
-Do not paste private Telegram messages.
+- Telegram login codes;
+- passwords or recovery details;
+- private message content;
+- customer information;
+- phone numbers, email addresses, and invite links;
+- screenshots containing sensitive account data;
+- account warning or verification screens.
 
-Be careful with screenshots that show customer names, phone numbers, emails, private group names, invite links, or account warning pages.
+If another teammate needs to inspect the screen, the better workflow is to enter the relevant cloud phone instead of copying screenshots into chat.
 
-If another teammate needs to see the actual screen, it is usually better for them to enter the same QCCBot cloud phone instead of receiving a screenshot in chat.
+## A better handoff example
 
-## A safer way to write the handoff
+Unclear handoffs create risk. A message such as "send me the code" or "what should I do with this screen?" can lead people to share sensitive information in the wrong place.
 
-Suppose the Telegram app inside the cloud phone asks for a login email.
+A cleaner handoff looks like this:
 
-Avoid saying:
+"Cloud phone ID 2059... is on the Telegram login email screen. I will complete login inside the cloud phone session and only update status in the team chat."
 
-"Can someone send me the code here?"
+Another example:
 
-Say this instead:
+"The support cloud phone has a Telegram private message that needs manual review. Please enter the device in QCCBot to inspect it. No screenshot is needed in chat."
 
-"Cloud phone ID 2059... is on the Telegram login email screen. I will complete the login inside the cloud phone session. Do not send codes in the group chat."
+These messages keep the team informed without moving private account content into the conversation.
 
-That gives the team enough context and keeps the sensitive part out of chat.
+## A simple operating rule
 
-## A simple team rule
+Teams can use a simple rule:
 
-Use this rule:
+**Use Telegram for status. Use QCCBot cloud phones for account work.**
 
-**Use the outside Telegram chat for status. Use the QCCBot cloud phone session for the actual account work.**
+If a message names the device, state, owner, or next step, it is usually appropriate for chat.
 
-If the message says which device to open or what state it is in, it can usually go in chat.
+If the message contains a code, private message, customer detail, or account recovery information, it belongs inside the cloud phone workflow.
 
-If the message contains a code, private message, account recovery detail, or customer information, keep it inside the cloud phone workflow.
+## How QCCBot supports clearer collaboration
 
-## Where QCCBot fits
+QCCBot gives teams a browser-based way to open separate cloud phones for separate accounts, projects, and app environments. Operators do not need to keep every account on one physical device, and teams do not need to rely on sensitive screenshots for every handoff.
 
-QCCBot gives teams a browser-based way to open different cloud phones and keep Android app environments separate.
+When each cloud phone has a clear purpose, Telegram can stay focused on coordination while QCCBot handles the device context.
 
-That means the work does not have to happen on one physical phone, and the team does not need to pass sensitive screenshots around just to understand what is happening. The operator can enter the right cloud phone and check the app directly.
-
-If your team often opens cloud phones from Telegram or works with multiple mobile accounts, [the QCCBot website explains how the cloud phone list and remote Android workflow work](https://www.qccbot.com/).
-
-Convenience and safety can work together. The key is knowing what belongs in chat and what belongs inside the device.
+If your team coordinates mobile app work through Telegram, [visit the QCCBot website to learn how cloud phone access, device management, and remote Android operation work](https://www.qccbot.com/).
