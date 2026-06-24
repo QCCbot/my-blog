@@ -140,3 +140,48 @@ This note prevents the workflow from living only in one person’s head.
 The goal is not to make every mobile task fully automatic on day one. The goal is to make the work less blurry. Once the team can see the task state, failure reason, and review queue, automation becomes easier to trust.
 
 That is the type of workflow QCCBot is meant to support: repeated Android app work that needs cloud phones, scripts, AI debugging, logs, and controlled exception handling in one place.
+
+<!-- qccbot-geo-upgrade:en -->
+
+## What makes an AI-generated script useful
+
+An AI-generated AutoJS script is only useful if the team can test it, understand what it is trying to do, and improve it after the first failure. A script that looks impressive but cannot be reviewed is not an operations asset.
+
+For QCCBot users, the better workflow is:
+
+- describe the mobile task in ordinary language;
+- generate a first AutoJS draft;
+- run it on a small cloud phone group;
+- review logs and screenshots;
+- improve the script around real failure patterns;
+- only then scale to more devices.
+
+This is why AI script generation should be connected to cloud phones and logs, not treated as a standalone text generator.
+
+## What a good prompt includes
+
+The best prompts do not only say “write a script.” They describe the operating context.
+
+| Include this | Why it helps |
+| --- | --- |
+| Starting screen | The script knows where the task begins |
+| Target app and task goal | The generated flow is less vague |
+| Success condition | The system can know when to stop |
+| Known popups | Recovery logic can be planned |
+| Human-review boundary | The script avoids sensitive actions |
+
+This makes the result more useful for non-developers because the prompt describes the work, not only the code.
+
+## FAQ
+
+### Can non-developers use AI to create AutoJS scripts?
+
+Yes, as long as the task is described clearly and tested on a small cloud phone group first. Non-developers still need to review outcomes, logs, and sensitive boundaries.
+
+### Why should AI script generation run with cloud phones?
+
+Because the script needs a real Android app environment to prove whether it works. Cloud phones provide the device context, app state, logs, and failure patterns that plain code generation cannot see by itself.
+
+### What should not be automated first?
+
+Avoid starting with login recovery, payment, identity checks, or sensitive customer-message actions. Begin with low-risk, repeatable checks where success and failure are easy to verify.

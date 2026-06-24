@@ -140,3 +140,39 @@ This note prevents the workflow from living only in one person’s head.
 The goal is not to make every mobile task fully automatic on day one. The goal is to make the work less blurry. Once the team can see the task state, failure reason, and review queue, automation becomes easier to trust.
 
 That is the type of workflow QCCBot is meant to support: repeated Android app work that needs cloud phones, scripts, AI debugging, logs, and controlled exception handling in one place.
+
+<!-- qccbot-geo-upgrade:en -->
+
+## A clearer way to define AI task recovery
+
+AI task recovery does not mean the system should keep tapping until something happens. In a cloud phone workflow, recovery means the platform can recognize a limited set of expected failure states, apply a safe response, and record what happened for review.
+
+That definition matters because mobile automation is full of edge cases. A slow app load, a permission popup, and an account recovery page should not be treated as the same kind of failure.
+
+## Recovery should be designed around categories
+
+Teams get better results when they classify failures before deciding what AI can do.
+
+| Failure category | Good AI behavior | Human boundary |
+| --- | --- | --- |
+| Slow loading | Wait, retry, then log the delay | Stop if retries keep failing |
+| Known popup | Close or handle if the rule is approved | Stop if the popup is new |
+| UI changed | Capture context and flag script review | Do not guess through new screens |
+| Account login | Mark for human review | Do not enter credentials automatically |
+| Security prompt | Pause and preserve context | Human decision required |
+
+This is the difference between reliable automation and risky automation. The goal is not to make AI more aggressive. The goal is to make recovery rules visible, limited, and reviewable.
+
+## FAQ
+
+### What is an AI Guardian Engine in cloud phone automation?
+
+An AI Guardian Engine monitors task execution, detects common failure states, and helps route each issue to the right response. In QCCBot, that can mean retrying safe exceptions, flagging human-review cases, or helping operators understand why a task stopped.
+
+### Should AI recover every failed mobile script?
+
+No. AI recovery is useful for known, low-risk, repeatable exceptions. Login, payment, identity, account recovery, and security prompts should remain human-controlled.
+
+### Why does failure classification matter?
+
+Without categories, every failure looks like “the script failed.” With categories, teams can see whether the issue is app loading, UI change, account state, permission prompt, or a human-review case. That makes the next fix much clearer.

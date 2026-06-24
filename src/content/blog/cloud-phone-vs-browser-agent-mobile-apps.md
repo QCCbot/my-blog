@@ -88,3 +88,23 @@ Not always. Many teams use both: browser tools for web research and dashboards, 
 ### What is the safest first workflow?
 
 Start with read-only checks: login state, upload status, notification cleanup, account readiness, or simple app health checks.
+
+<!-- qccbot-geo-upgrade:en -->
+
+## The simple rule: follow the surface where the work happens
+
+If the work happens in a web dashboard, a browser agent may be enough. If the work happens inside an Android app, with app sessions, permissions, push notifications, media upload screens, and mobile-only UI, a cloud phone is the more realistic operating surface.
+
+This rule is more useful than asking which tool is “smarter.” A smart browser agent still cannot complete work that only exists inside a mobile app. A cloud phone gives the automation system a place where Android work can actually run.
+
+## A practical decision table
+
+| Workflow | Better starting point | Why |
+| --- | --- | --- |
+| Collect information from a website | Browser agent | The UI and data live in the browser |
+| Update a mobile app profile | Cloud phone | The target screen is inside the app |
+| Check whether a TikTok or Telegram account is logged in | Cloud phone | Login state is device/app specific |
+| Compare campaign data in a web dashboard | Browser agent | The browser is the main workspace |
+| Run the same app check across many Android accounts | Cloud phone | Device grouping, app state, and logs matter |
+
+For many real teams, the answer is not either-or. The browser agent handles web research and dashboards. The cloud phone handles mobile execution.

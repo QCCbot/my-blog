@@ -59,28 +59,29 @@ const category = lowerTitle.includes('autojs')
 				? 'Cross-border workflows'
 				: 'Cloud phone automation';
 
-const faqItems = [
-	{
-		question: 'Is QCCBot only useful for developers?',
-		answer:
-			'No. Operators can describe mobile app tasks in plain language, then use xeasy code AI to generate or refine AutoJS scripts before testing them on QCCBot cloud phones.',
-	},
-	{
-		question: 'Can AI recover every failed cloud phone script?',
-		answer:
-			'No. AI takeover is best for recognizable and repeatable issues. Account verification, security prompts, payment steps, and sensitive account actions should still be reviewed by humans.',
-	},
-	{
-		question: 'Why use cloud phones instead of physical phones?',
-		answer:
-			'Cloud phones are easier to group, monitor, script, and recover at scale, especially when teams manage many Android app accounts, regions, or repeated mobile workflows.',
-	},
-];
+const extractFaqItems = (markdown: string) => {
+	const faqStart = markdown.search(/^##\s+(FAQ|Frequently asked questions)\s*$/im);
+	if (faqStart === -1) return [];
 
-const answerSummary =
-	`${description} QCCBot is most useful when a team needs real Android cloud phones, AI-generated AutoJS scripts, batch task logs, and controlled AI recovery for mobile app workflows that browser agents cannot complete.`;
+	const faqBody = markdown.slice(faqStart).replace(/^##\s+.*$/im, '');
+	const nextH2 = faqBody.search(/\n##\s+/);
+	const section = nextH2 === -1 ? faqBody : faqBody.slice(0, nextH2);
+	const matches = [...section.matchAll(/^###\s+(.+?)\s*\n([\s\S]*?)(?=\n###\s+|\n##\s+|$)/gm)];
 
-const socialAngle = `If your team still opens phones by hand to check mobile app tasks, this guide explains where AI cloud phones fit: ${title}`;
+	return matches
+		.map((match) => ({
+			question: match[1].trim(),
+			answer: match[2]
+				.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+				.replace(/[*_`>#-]/g, '')
+				.replace(/\s+/g, ' ')
+				.trim(),
+		}))
+		.filter((item) => item.question && item.answer)
+		.slice(0, 6);
+};
+
+const faqItems = extractFaqItems(body);
 
 const structuredData = [
 	{
@@ -111,18 +112,6 @@ const structuredData = [
 	},
 	{
 		'@context': 'https://schema.org',
-		'@type': 'FAQPage',
-		mainEntity: faqItems.map((item) => ({
-			'@type': 'Question',
-			name: item.question,
-			acceptedAnswer: {
-				'@type': 'Answer',
-				text: item.answer,
-			},
-		})),
-	},
-	{
-		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
 		itemListElement: [
 			{
@@ -140,6 +129,21 @@ const structuredData = [
 		],
 	},
 ];
+
+if (faqItems.length > 0) {
+	structuredData.push({
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer,
+			},
+		})),
+	});
+}
 ---
 
 <html lang="en">
@@ -641,11 +645,6 @@ const structuredData = [
 					}
 
 					<div class="article-main">
-						<section class="answer-card" aria-label="Quick answer">
-							<h2>Quick answer</h2>
-							<p>{answerSummary}</p>
-						</section>
-
 						{
 							keySections.length > 0 && (
 								<section class="key-card" id="key-sections">
@@ -655,45 +654,9 @@ const structuredData = [
 							)
 						}
 
-						<section class="reader-cta" aria-label="QCCBot workflow callout">
-							<strong>Working through a similar mobile workflow?</strong>
-							<p>
-								QCCBot helps teams run Android cloud phones, generate AutoJS scripts with AI, and recover
-								from script exceptions with controlled AI takeover.
-							</p>
-							<a class="cta-link" href="https://www.qccbot.com/">Explore QCCBot</a>
-						</section>
-
 						<div class="article-body">
 							<slot />
 						</div>
-
-						<section class="faq-block">
-							<h2>FAQ</h2>
-							<div class="faq-list">
-								<div class="faq-item">
-									<h3>{faqItems[0].question}</h3>
-									<p>{faqItems[0].answer}</p>
-								</div>
-								<div class="faq-item">
-									<h3>{faqItems[1].question}</h3>
-									<p>{faqItems[1].answer}</p>
-								</div>
-								<div class="faq-item">
-									<h3>{faqItems[2].question}</h3>
-									<p>{faqItems[2].answer}</p>
-								</div>
-							</div>
-						</section>
-
-						<section class="reader-cta">
-							<strong>Ready to reduce manual phone checks?</strong>
-							<p>
-								Use QCCBot to turn repeated Android app tasks into AI-assisted cloud phone workflows with logs,
-								script debugging, and exception handling.
-							</p>
-							<a class="cta-link" href="https://www.qccbot.com/">Visit QCCBot</a>
-						</section>
 
 						{relatedPosts.length > 0 && (
 							<section class="related-posts">
@@ -734,10 +697,6 @@ const structuredData = [
 									>X</a
 								>
 							</div>
-						</div>
-						<div class="sidebar-card social-angle">
-							<p class="sidebar-title">Social angle</p>
-							<p>{socialAngle}</p>
 						</div>
 					</aside>
 				</div>

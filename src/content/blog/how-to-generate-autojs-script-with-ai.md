@@ -87,7 +87,7 @@ A workflow that clearly says "these 6 devices need login review" is more useful 
 
 ## Where QCCBot naturally fits
 
-QCCBot is useful when AI-generated AutoJS scripts needs to happen inside real Android app environments, not just browser tabs or API calls. Cloud phones provide the Android runtime. AutoJS scripts run the repeated steps. AI assistance helps generate, debug, and recover suitable script flows. Logs make the result reviewable.
+QCCBot is useful when AI-generated AutoJS scripts need to run inside real Android app environments, not just browser tabs or API calls. Cloud phones provide the Android runtime. AutoJS scripts run the repeated steps. AI assistance helps generate, debug, and recover suitable script flows. Logs make the result reviewable.
 
 If this sounds like the kind of mobile work your team deals with, [QCCBot can help you test the workflow on cloud phones and decide what should be automated first](https://www.qccbot.com/).
 
@@ -131,3 +131,45 @@ This note prevents the workflow from living only in one person’s head.
 The goal is not to make every mobile task fully automatic on day one. The goal is to make the work less blurry. Once the team can see the task state, failure reason, and review queue, automation becomes easier to trust.
 
 That is the type of workflow QCCBot is meant to support: repeated Android app work that needs cloud phones, scripts, AI debugging, logs, and controlled exception handling in one place.
+
+<!-- qccbot-geo-upgrade:en -->
+
+## The real skill is describing the workflow
+
+AI can help write AutoJS, but the operator still needs to describe the work clearly. The best request is not “make a script for this app.” It is a short operations brief.
+
+A useful brief answers five questions:
+
+1. Where does the task start?
+2. What should the phone do?
+3. What counts as success?
+4. What known interruptions may appear?
+5. Which screens should stop for human review?
+
+When those answers are missing, AI may still produce code, but the code will be guessing. When those answers are clear, the script becomes easier to test and improve.
+
+## A better example prompt
+
+Instead of:
+
+> Write an AutoJS script for this app.
+
+Use something closer to:
+
+> Start from the app home screen. Search this keyword, open the first few results, check whether the expected page appears, and stop if a login, payment, recovery, or security prompt appears. Record whether the workflow finished, failed because of loading, failed because the UI changed, or needs human review.
+
+That prompt is longer, but it produces a script that is closer to an operations workflow. It also gives the team categories for reviewing failures later.
+
+## FAQ
+
+### What should I prepare before asking AI for an AutoJS script?
+
+Prepare the starting screen, the goal, the success condition, known popups, and human-review boundaries. If possible, include a short description of what the screen looks like when the task succeeds.
+
+### Should the first generated script run on all cloud phones?
+
+No. Run it on a small test group first. The purpose of the first run is to find failure patterns, not to prove that the workflow is ready for every account.
+
+### How does QCCBot help after the script is generated?
+
+QCCBot provides the cloud phone environment, script execution, logs, AI debugging, and controlled exception handling needed to turn the generated script into a repeatable mobile workflow.

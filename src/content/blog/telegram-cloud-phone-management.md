@@ -73,4 +73,30 @@ This is not about adding ceremony. It is about keeping communication and account
 
 QCCBot helps teams keep mobile accounts and app workflows in clear cloud phone environments. Telegram can remain the communication entry point, while device state, account context, and mobile app work stay inside QCCBot.
 
+## A better mental model: message, entry point, workspace
+
+It helps to separate the workflow into three layers.
+
+| Layer | What belongs there | What should not be forced there |
+| --- | --- | --- |
+| Telegram message | Task assignment, short status, handoff note | Full account state, login codes, private customer content |
+| Entry link | A quick path to the right QCCBot page or device context | The whole operating process |
+| Cloud phone workspace | App session, account state, mobile screen, logs, scripts | Casual team chatter |
+
+This model keeps the article grounded in real use. Telegram is not being promoted as a magic control panel. It is a familiar coordination surface that can point people toward the right cloud phone workspace.
+
+## FAQ
+
+### Does QCCBot let Telegram replace the cloud phone dashboard?
+
+No. Telegram should be treated as a communication and entry layer. The real Android environment, app state, account context, and operational controls stay inside QCCBot.
+
+### When is a Telegram entry link useful?
+
+It is useful when a teammate needs to reach the right cloud phone context quickly from a chat conversation. It is less useful if the team has only one account and no handoff problem.
+
+### What should teams avoid sharing in Telegram?
+
+Avoid moving login codes, account recovery screens, private customer messages, and complete account details into group chats. Use Telegram for coordination and keep sensitive account work inside the relevant cloud phone.
+
 If your team is managing multiple accounts, apps, or shift-based mobile operations, [visit the QCCBot website to learn more about cloud phone management, remote Android environments, and team workflows](https://www.qccbot.com/).

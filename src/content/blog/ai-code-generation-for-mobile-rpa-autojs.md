@@ -87,7 +87,7 @@ A workflow that clearly says "these 6 devices need login review" is more useful 
 
 ## Where QCCBot naturally fits
 
-QCCBot is useful when AI-generated AutoJS scripts needs to happen inside real Android app environments, not just browser tabs or API calls. Cloud phones provide the Android runtime. AutoJS scripts run the repeated steps. AI assistance helps generate, debug, and recover suitable script flows. Logs make the result reviewable.
+QCCBot is useful when AI-generated AutoJS scripts need to run inside real Android app environments, not just browser tabs or API calls. Cloud phones provide the Android runtime. AutoJS scripts run the repeated steps. AI assistance helps generate, debug, and recover suitable script flows. Logs make the result reviewable.
 
 If this sounds like the kind of mobile work your team deals with, [QCCBot can help you test the workflow on cloud phones and decide what should be automated first](https://www.qccbot.com/).
 
