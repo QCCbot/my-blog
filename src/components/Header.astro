@@ -50,10 +50,19 @@ const chineseHref = new URL(Astro.url.pathname, 'https://cn-blog.qccbot.com').to
 </header>
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 1000;
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		border-bottom: 1px solid rgba(223, 232, 239, 0.85);
+		background: rgba(255, 255, 255, 0.94);
+		box-shadow: 0 2px 12px rgba(var(--black), 6%);
+		backdrop-filter: saturate(180%) blur(14px);
+		-webkit-backdrop-filter: saturate(180%) blur(14px);
+	}
+	:global(html) {
+		scroll-padding-top: 5rem;
 	}
 	h2 {
 		margin: 0;
